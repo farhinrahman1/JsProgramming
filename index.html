@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Programming</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>JavaScript Programming</h1>
+    </div>
+    <!-- converter.... -->
+    <div class="styling">
+        <h2>HERO CONVERTER</h2>
+        <span class="hero_converter">Number: </span><input id="converter_input" type="number" value="0"/>
+            <select name="unit" id="converter_unit">
+                <option value="lbtokg">In Kilograms</option>
+                <option value="kgtolb">In Pounds</option>
+            </select>
+            <button onclick="convert()" type="button" id="converter_button">Convert</button>
+            <span id="converter_result"></span>
+    </div>
+    <!-- min max...... -->
+    <div class="calc_styling">
+        <h2>Calculator</h2>
+        <form id="numberForm">
+            <label for="numbers">Enter numbers:</label>
+            <input type="text" id="numbers" name="numbers" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <!-- Magic.... -->
+    <div class="magic_styling">
+        <h2>Magic!</h2>
+        <textarea id="textInput" rows="10" cols="30"></textarea><br>
+        <button onclick="clearText()">Clear It</button>
+        <button onclick="toggleCase()">Capitalize</button>
+        <button onclick="sortLines()">Sort</button>
+        <button onclick="reverseLines()">Reverse</button>
+        <button onclick="stripBlank()">Strip Blank</button>
+        <button onclick="addNumbers()">Add Numbers</button>
+        <button onclick="shuffleLines()">Shuffle</button>
+    </div>
+    <!-- quote -->
+    <div class="quote_styling" id="quotes">
+        <h2>Quote Box</h2>
+        <button onclick="orange()" type="button" id="orange-button"></button>
+        <button onclick="purple()" type="button" id="purple-button"></button>
+        <button onclick="yellow()" type="button" id="yellow-button"></button>
+        <button onclick="red()" type="button" id="red-button"></button>
+        <button onclick="fectchQuote()" type="button" id="quote-button"></button>
+
+    </div>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var numbersInput = document.getElementById('numbers').value.trim();
+            var numbersArray = numbersInput.split(',').map(function(item) {
+                return parseFloat(item);
+            });
+            var max = Math.max(...numbersArray);
+            var min = Math.min(...numbersArray);
+            var sum = numbersArray.reduce((acc, curr) => acc + curr, 0);
+            var average = sum / numbersArray.length;
+            var reverseOrder = numbersArray.slice().reverse();
+    
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <p>Max: ${max}</p>
+                <p>Min: ${min}</p>
+                <p>Sum: ${sum}</p>
+                <p>Average: ${average}</p>
+                <p>Reverse Order: ${reverseOrder.join(', ')}</p>
+            `;
+        });
+
+        function clearText() {
+    document.getElementById("textInput").value = "";
+}
+
+function toggleCase() {
+    var textInput = document.getElementById("textInput");
+    var currentText = textInput.value;
+    if (currentText === "") return;
+    
+    if (currentText === currentText.toUpperCase()) {
+        textInput.value = currentText.toLowerCase();
+    } else {
+        textInput.value = currentText.toUpperCase();
+    }
+}
+
+function sortLines() {
+    var textInput = document.getElementById("textInput");
+    var lines = textInput.value.split('\n');
+    lines.sort();
+    textInput.value = lines.join('\n');
+}
+
+function reverseLines() {
+    var textInput = document.getElementById("textInput");
+    var lines = textInput.value.split('\n');
+    lines = lines.map(function(line) {
+        return line.split('').reverse().join('');
+    });
+    textInput.value = lines.reverse().join('\n');
+}
+
+function stripBlank() {
+    var textInput = document.getElementById("textInput");
+    var lines = textInput.value.split('\n');
+    lines = lines.filter(function(line) {
+        return line.trim() !== '';
+    });
+    textInput.value = lines.join('\n');
+}
+
+function addNumbers() {
+    var textInput = document.getElementById("textInput");
+    var lines = textInput.value.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+        lines[i] = (i + 1) + '. ' + lines[i];
+    }
+    textInput.value = lines.join('\n');
+}
+
+function shuffleLines() {
+    var textInput = document.getElementById("textInput");
+    var lines = textInput.value.split('\n');
+    for (var i = lines.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = lines[i];
+        lines[i] = lines[j];
+        lines[j] = temp;
+    }
+    textInput.value = lines.join('\n');
+}
+    </script>
+    
+    <script src="my.js"></script>
+    <script src="https://kit.fontawesome.com/692c2638c1.js" crossorigin="anonymous"></script> 
+</body>
+</html>

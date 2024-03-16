@@ -1,0 +1,129 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F0EDCF;
+}
+/* a{
+    text-decoration: none;
+    color: #333;
+} */
+.navbar{
+    margin: 2%;
+  background-color: #22092C;
+  color: #fff;
+  padding: 1%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+}
+.h1{
+    background-color: #333;
+  color: #333;
+}
+.styling{
+    /* create e grey box for the inputs */
+    background-color: #ffffff;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    /* make the box beautiful */
+    box-shadow: 0 0 10px 0 #333;
+    /* gaps between inputs */
+    gap: 10px;
+    /* make the input beautiful */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+    width: 50%;
+    outline: none;
+    /* set the box in center */
+    margin: auto;
+    /* make the lg to kg and kg to lg font big */
+    font-size: 20px;
+    color: #333;
+    /* space between two box */
+    margin-top: 10%;
+}
+.button{
+    background-color: #22092C;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+.calc_styling{
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 #333;
+    gap: 10px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    outline: none;
+    margin: auto;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.magic_styling{
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 #333;
+    gap: 10px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    outline: none;
+    margin: auto;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.quote_styling{
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 #333;
+    gap: 10px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    outline: none;
+    margin: auto;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
