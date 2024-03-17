@@ -24,7 +24,8 @@ body{
 }
 .styling{
     /* create e grey box for the inputs */
-    background-color: #ffffff;
+    background-color: #EEE4B1;
+    color:#000000;
     padding: 2%;
     margin: 2%;
     border-radius: 5px;
@@ -48,7 +49,6 @@ body{
     margin: auto;
     /* make the lg to kg and kg to lg font big */
     font-size: 20px;
-    color: #333;
     /* space between two box */
     margin-top: 10%;
 }
@@ -65,7 +65,7 @@ body{
     color: #ffffff;
 }
 .calc_styling{
-    background-color: #ffffff;
+    background-color: #EEE4B1;
     padding: 2%;
     border-radius: 5px;
     display: flex;
@@ -81,17 +81,17 @@ body{
     outline: none;
     margin: auto;
     font-size: 20px;
-    color: #333;
+    color: black;
     margin-top: 10%;
     margin-bottom: 10%;
 }
 .magic_styling{
-    background-color: #ffffff;
+    background-color: #EEE4B1;
     padding: 2%;
     border-radius: 5px;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     flex-direction: column;
     box-shadow: 0 0 10px 0 #333;
     gap: 10px;
@@ -102,12 +102,12 @@ body{
     outline: none;
     margin: auto;
     font-size: 20px;
-    color: #333;
+    color: black;
     margin-top: 10%;
     margin-bottom: 10%;
 }
 .quote-container{
-    background-color: #ffffff;
+    background-color: #EEE4B1;
     padding: 2%;
     border-radius: 5px;
     display: flex;
@@ -160,9 +160,7 @@ body{
     border-radius: 100%;
     cursor: pointer;
 }
-/* rectangular shape button with arrow sign */
 .color-button5{
-
     background-color: black;
     color: #fff;
     padding: 10px;
@@ -172,4 +170,41 @@ body{
     width:25%;
     margin-left: 28%;
     margin-top: 10%;
+}
+.footer{
+    font-size: 15px;
+    margin: 2%;
+  background-color: #22092C;
+  color: #fff;
+  padding: 1%;
+  border-radius: 10%;
+  gap: 0%;
+  text-align: center;
+}
+.magic{
+    background-color: #5F374B;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.submit{
+    background-color: #5F374B;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.convert{
+    background-color: #5F374B;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin-top: 5%;
 }

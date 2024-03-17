@@ -19,7 +19,7 @@
                 <option value="lbtokg">In Kilograms</option>
                 <option value="kgtolb">In Pounds</option>
             </select>
-            <button onclick="convert()" type="button" id="converter_button">Convert</button>
+            <button class="convert" onclick="convert()" type="button" id="converter_button">Convert</button>
             <span id="converter_result"></span>
     </div>
     <!-- min max...... -->
@@ -28,7 +28,7 @@
         <form id="numberForm">
             <label for="numbers">Enter numbers:</label>
             <input type="text" id="numbers" name="numbers" required>
-            <button type="submit">Submit</button>
+            <button class="submit" type="submit">Submit</button>
         </form>
         <div id="output"></div>
     </div>
@@ -36,26 +36,33 @@
     <div class="magic_styling">
         <h2>Magic!</h2>
         <textarea id="textInput" rows="10" cols="30"></textarea><br>
-        <button onclick="clearText()">Clear It</button>
-        <button onclick="toggleCase()">Capitalize</button>
-        <button onclick="sortLines()">Sort</button>
-        <button onclick="reverseLines()">Reverse</button>
-        <button onclick="stripBlank()">Strip Blank</button>
-        <button onclick="addNumbers()">Add Numbers</button>
-        <button onclick="shuffleLines()">Shuffle</button>
+        <button class="magic" onclick="clearText()">Clear It</button>
+        <button class="magic" onclick="toggleCase()">Capitalize</button>
+        <button class="magic" onclick="sortLines()">Sort</button>
+        <button class="magic" onclick="reverseLines()">Reverse</button>
+        <button class="magic" onclick="stripBlank()">Strip Blank</button>
+        <button class="magic" onclick="addNumbers()">Add Numbers</button>
+        <button class="magic" onclick="shuffleLines()">Shuffle</button>
     </div>
     <!-- quote -->
     <div class="quote-container" id="quote-container">
+        <h2>Quote Box</h2>
         <p id="quote-text"></p>
         <div class="buttons">           
-            <button class="color-button1" onclick="changeColors('#5D0E41', '#F3B95F', '#F3B95F')" ondblclick=""></button>
-        <button class="color-button2" onclick="changeColors('#416D19', '#DCFFB7', '#DCFFB7')"></button>
-        <button class="color-button3" onclick="changeColors('#333', '#92C7CF', '#92C7CF')"></button>
-        <button class="color-button4" onclick="changeColors('#A94438', '#E6BAA3', '#E6BAA3')"></button>
-        <!-- a button which will change quotes -->
+            <button class="color-button1" onclick="changeStyles('#CDFADB', '#5D0E41','monospace','20px')"></button>
+        <button class="color-button2" onclick="changeStyles('#FFD0EC', '#416D19','tahoma','20px')"></button>
+        <button class="color-button3" onclick="changeStyles('#F2F597', '#F57D1F','impact','20px')"></button>
+        <button class="color-button4" onclick="changeStyles('#DCFFB7', '#D04848','cursive','20px')"></button>
         <button class="color-button5" onclick="displayRandomQuote()"></button>
     </div>
       </div>
+    <footer>
+        <div class="footer">
+                <h3>Brac University</h3>
+                <p>Farhin Rahman</p>
+                <p>CSE Dept.</p>
+        </div>
+
     <script>
         document.getElementById('numberForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -142,23 +149,23 @@ function shuffleLines() {
 }
 
 const fortunes = [
-        "The early bird gets the worm, but the second mouse gets the cheese.",
-        "Be on the alert to recognize your prime at whatever time of your life it may occur.",
-        "Your road to glory will be rocky, but fulfilling.",
-        "Courage is not simply one of the virtues, but the form of every virtue at the testing point.",
-        "Patience is your alley at the moment. Don’t worry!",
-        "Nothing is impossible to a willing heart.",
-        "Don’t worry about money. The best things in life are free.",
-        "Don’t pursue happiness – create it.",
-        "Courage is not the absence of fear; it is the conquest of it.",
-        "Nothing is so much to be feared as fear.",
-        "All things are difficult before they are easy.",
-        "The real kindness comes from within you.",
-        "A ship in the harbor is safe, but that’s not why ships are built.",
-        "You don’t need strength to let go of something. What you really need is understanding.",
-        "If you want the rainbow, you have to tolerate the rain.",
-        "Fear is interest paid on a debt you may not owe.",
-        "Hardly anyone knows how much is gained by ignoring the future.",
+        "'Believe you can and you're halfway there.' - Theodore Roosevelt",
+        "'In the end, it's not the years in your life that count. It's the life in your years.' - Abraham Lincoln",
+        "'The only way to do great work is to love what you do.' - Steve Jobs",
+        "'The future belongs to those who believe in the beauty of their dreams.' - Eleanor Roosevelt.",
+        "'Success is not final, failure is not fatal: It is the courage to continue that counts.' - Winston Churchill",
+        "'Be yourself; everyone else is already taken.' - Oscar Wilde",
+        "'The only limit to our realization of tomorrow will be our doubts of today.' - Franklin D. Roosevelt",
+        "'In three words I can sum up everything I've learned about life: It goes on.' - Robert Frost",
+        "'The greatest glory in living lies not in never falling, but in rising every time we fall.' - Nelson Mandela",
+        "'The only impossible journey is the one you never begin.' - Tony Robbins",
+        "'Life is what happens when you're busy making other plans.' - John Lennon",
+        "'The best way to predict the future is to create it.' - Peter Drucker",
+        "'Happiness is not something ready-made. It comes from your own actions.' - Dalai Lama",
+        "'The only thing we have to fear is fear itself.' - Franklin D. Roosevelt",
+        "'The purpose of our lives is to be happy.' - Dalai Lama",
+        "'You only live once, but if you do it right, once is enough.' - Mae West",
+        "'The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.' - Helen Keller",
     ];
     function getRandomQuote() {
       return fortunes[Math.floor(Math.random() * fortunes.length)];
@@ -167,12 +174,14 @@ const fortunes = [
       const quoteContainer = document.getElementById('quote-text');
       quoteContainer.textContent = getRandomQuote();
     }
-    function changeColors(fontColor, borderColor, bgColor) {
-      const quoteContainer = document.getElementById('quote-container');
-      quoteContainer.style.color = fontColor;
-      quoteContainer.style.borderColor = borderColor;
-      quoteContainer.style.backgroundColor = bgColor;
-    }
+    function changeStyles(bgColor, textColor, fontFamily, fontSize) {
+    var quoteContainer = document.getElementById("quote-container");
+    var quoteText = document.getElementById("quote-text");
+    quoteContainer.style.backgroundColor = bgColor;
+    quoteText.style.color = textColor;
+    quoteText.style.fontFamily = fontFamily;
+    quoteText.style.fontSize = fontSize;
+}
     displayRandomQuote();
     </script>
     
