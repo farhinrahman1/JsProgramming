@@ -45,16 +45,17 @@
         <button onclick="shuffleLines()">Shuffle</button>
     </div>
     <!-- quote -->
-    <div class="quote_styling" id="quotes">
-        <h2>Quote Box</h2>
-        <button onclick="orange()" type="button" id="orange-button"></button>
-        <button onclick="purple()" type="button" id="purple-button"></button>
-        <button onclick="yellow()" type="button" id="yellow-button"></button>
-        <button onclick="red()" type="button" id="red-button"></button>
-        <button onclick="fectchQuote()" type="button" id="quote-button"></button>
-
+    <div class="quote-container" id="quote-container">
+        <p id="quote-text"></p>
+        <div class="buttons">           
+            <button class="color-button1" onclick="changeColors('#5D0E41', '#F3B95F', '#F3B95F')" ondblclick=""></button>
+        <button class="color-button2" onclick="changeColors('#416D19', '#DCFFB7', '#DCFFB7')"></button>
+        <button class="color-button3" onclick="changeColors('#333', '#92C7CF', '#92C7CF')"></button>
+        <button class="color-button4" onclick="changeColors('#A94438', '#E6BAA3', '#E6BAA3')"></button>
+        <!-- a button which will change quotes -->
+        <button class="color-button5" onclick="displayRandomQuote()"></button>
     </div>
-
+      </div>
     <script>
         document.getElementById('numberForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -139,6 +140,40 @@ function shuffleLines() {
     }
     textInput.value = lines.join('\n');
 }
+
+const fortunes = [
+        "The early bird gets the worm, but the second mouse gets the cheese.",
+        "Be on the alert to recognize your prime at whatever time of your life it may occur.",
+        "Your road to glory will be rocky, but fulfilling.",
+        "Courage is not simply one of the virtues, but the form of every virtue at the testing point.",
+        "Patience is your alley at the moment. Don’t worry!",
+        "Nothing is impossible to a willing heart.",
+        "Don’t worry about money. The best things in life are free.",
+        "Don’t pursue happiness – create it.",
+        "Courage is not the absence of fear; it is the conquest of it.",
+        "Nothing is so much to be feared as fear.",
+        "All things are difficult before they are easy.",
+        "The real kindness comes from within you.",
+        "A ship in the harbor is safe, but that’s not why ships are built.",
+        "You don’t need strength to let go of something. What you really need is understanding.",
+        "If you want the rainbow, you have to tolerate the rain.",
+        "Fear is interest paid on a debt you may not owe.",
+        "Hardly anyone knows how much is gained by ignoring the future.",
+    ];
+    function getRandomQuote() {
+      return fortunes[Math.floor(Math.random() * fortunes.length)];
+    }
+    function displayRandomQuote() {
+      const quoteContainer = document.getElementById('quote-text');
+      quoteContainer.textContent = getRandomQuote();
+    }
+    function changeColors(fontColor, borderColor, bgColor) {
+      const quoteContainer = document.getElementById('quote-container');
+      quoteContainer.style.color = fontColor;
+      quoteContainer.style.borderColor = borderColor;
+      quoteContainer.style.backgroundColor = bgColor;
+    }
+    displayRandomQuote();
     </script>
     
     <script src="my.js"></script>

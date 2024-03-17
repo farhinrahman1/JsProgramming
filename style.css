@@ -106,7 +106,7 @@ body{
     margin-top: 10%;
     margin-bottom: 10%;
 }
-.quote_styling{
+.quote-container{
     background-color: #ffffff;
     padding: 2%;
     border-radius: 5px;
@@ -126,4 +126,50 @@ body{
     color: #333;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+.color-button1{
+    background-color: #5D0E41;
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.color-button2{
+    background-color: #416D19;
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.color-button3{
+    background-color: #F57D1F;
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.color-button4{
+    background-color: #D04848;
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+/* rectangular shape button with arrow sign */
+.color-button5{
+
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:25%;
+    margin-left: 28%;
+    margin-top: 10%;
 }
